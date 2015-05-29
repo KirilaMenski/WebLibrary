@@ -1,0 +1,30 @@
+#registration{
+position:absolute;
+background-image:url(image/page2.png);
+width:33%;
+height:80%;
+top: 20%;
+right:25%;
+background-repeat:no-repeat;
+}
+#regiselement{
+position:relative;
+top:80px;
+
+}
+.regtext:focus{
+background:#FA6;
+}
+.error {
+background:red;
+}
+.accept{
+background:#5DED2D;
+}
+#rules{
+font-size:11pt;
+font-family:Monotype Corsiva;
+}
+#window ul{
+list-style-type:decimal;
+}
