@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -15,29 +16,22 @@
 <%@ include file="pattern/main.jsp"%>
 <title>Library</title>
 </head>
-
 <body>
 
-	<div id="window">
-		<div id="text">
-			<blockquote>
-				<p align="center">Правілы сайту</p>
-				<ol>
-					<li>Не плявацца</li>
-					<li>Не кусацца</li>
-					<li>Не лаіцца матам</li>
-					<li>Не крыўдзіць людзей</li>
-					<li>Не ўваходзіць з сабакамі</li>
-					<li>Не паліць</li>
-					<li>Не піць</li>
-				</ol>
-				<p>Пры парушэнні аднаго з вышэй пералічанных правілаў ідзе
-					неадкладны бан і спасылка ў Сібір на перавыхаванне=)</p>
-			</blockquote>
-		</div>
-	</div>
 
+	<div id="window">
+
+		<div id="addNewsForm" align="center">
+			<form:form action="addNews" method="POST" commandName="news">
+				<form:input type="text" placeholder="Назва" size="94" id="title" path="title"/>
+				<form:textarea placeholder="Апісанне" id="description" rows="5" cols="80" path="description"/>
+				<form:textarea placeholder="Навіна" id="news" rows="13" cols="80" path="news"/>
+				<input type="submit" value="<spring:message code="but.addNews"/>" />
+			</form:form>
+		</div>
+
+
+	</div>
 
 </body>
 </html>
-

@@ -10,6 +10,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="style_reg.css">
+<script type='text/javascript'
+	src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+<script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/reg_js.js"></script>
 <script type="text/javascript" src="js/ajax.js"></script>
 <title>Library</title>
@@ -18,14 +21,14 @@
 <body onload="run()">
 
 	<div class="mainblock">
-		<a href="savecitation.by"><p id="welcomtext">
+		<a href="savecitation"><p id="welcomtext">
 				<spring:message code="label.welcom" />
 			</p></a>
 
 		<div id="registration">
 			<div id="regiselement">
 				<p align="center" id="rules">
-					<a href="savecitation.by"><spring:message code="label.redirect" /></a>
+					<a href="savecitation"><spring:message code="label.redirect" /></a>
 				</p>
 				<br>
 				<p align="center">
@@ -49,7 +52,7 @@
 						placeholder="email"></input>
 				</p>
 				<p align="center" id="rules">
-					<a href="savecitation_rule.by"><spring:message
+					<a href="savecitation_rule"><spring:message
 							code="label.readRule" /></a>
 				</p>
 				<p align="center">

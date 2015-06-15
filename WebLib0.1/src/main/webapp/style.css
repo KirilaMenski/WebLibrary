@@ -75,7 +75,13 @@ body {
 	border: 1pt solid black;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
-
+#addNewsForm {
+	position: absolute;
+	top: 2%;
+	right: 5%;
+	width: 90%;
+	height: 50%;
+}
 #description {
 	resize: none;
 }
@@ -109,8 +115,7 @@ body {
 	top: 55%;
 	right: 12%;
 	width: 780px;
-	height: 1010px;
-	background-image: url(image/page4.png);
+	height: 2020px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 	background-image: url(image/page5.png);
 }
