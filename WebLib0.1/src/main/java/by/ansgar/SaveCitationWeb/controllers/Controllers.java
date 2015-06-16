@@ -1,5 +1,8 @@
 package by.ansgar.SaveCitationWeb.controllers;
 
+import java.sql.SQLException;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -30,8 +33,12 @@ public class Controllers {
 	}
 	
 	@RequestMapping(value = "/savecitation_news", method = {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView newsPage() {
+	public ModelAndView newsPage() throws SQLException {
 		ModelAndView modelView = new ModelAndView();
+		
+		List<News> allNews = service.getAllNews();
+		modelView.addObject("news", allNews);
+		
 		modelView.setViewName("SaveCitationWeb_News");
 		return modelView;
 	}
