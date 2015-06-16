@@ -44,7 +44,7 @@ public class NewsDAOImpl implements NewsDAO {
 	public List<News> getAllNews() throws SQLException {
 		List<News> allNews = new ArrayList<News>();
 		try {
-			allNews = currentSession().createQuery("FROM news_web").list();
+			allNews = currentSession().createQuery("FROM News").list();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
