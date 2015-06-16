@@ -1,4 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
@@ -25,12 +26,26 @@
 		<button id="add">
 			<spring:message code="but.addNews" />
 		</button>
+		<a href="addNewsPage"><spring:message code="label.addNews"/></a>
+		
 	</div>
 
 
 	<div id="window">
 
-		<div id="newsBlock"></div>
+		<div id="newsBlock">
+			<c:forEach items="${news}" var="news">
+				<div class="newsClass">
+					<div id="titleRes">
+						<b>${news.title}</b>
+					</div>
+					<span id="dateRes"> ${news.date}</span>
+					<p>
+						<span id="descriptionRes">${news.description}</span>
+					</p>
+				</div>
+			</c:forEach>
+		</div>
 
 	</div>
 
