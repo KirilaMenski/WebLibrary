@@ -21,12 +21,12 @@
 
 	<div id="window">
 
-		<div id="addNewsForm" align="center">
+		<div id="addNewsForm">
 			<form:form action="addNews" method="POST" commandName="news">
-				<form:input type="text" placeholder="Назва" size="94" id="title" path="title"/>
-				<form:textarea placeholder="Апісанне" id="description" rows="5" cols="80" path="description"/>
-				<form:textarea placeholder="Навіна" id="news" rows="13" cols="80" path="news"/>
-				<input type="submit" value="<spring:message code="but.addNews"/>" />
+				<form:input type="text" placeholder="Назва" id="title" path="title"/>
+				<form:textarea placeholder="Апісанне" id="description" path="description"/>
+				<form:textarea placeholder="Навіна" id="news" path="news"/>
+				<input type="submit" value="<spring:message code="but.add"/>" />
 			</form:form>
 		</div>
 

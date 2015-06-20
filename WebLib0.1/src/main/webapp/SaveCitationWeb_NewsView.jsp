@@ -1,4 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
@@ -18,32 +19,31 @@
 
 <body>
 
-	<div id="window" align="center">
+	<div id="window">
 		<div id="view">
-			<div id="res1">
-				<p>
-					Назва<b><span id="res1"></span></b>
-				</p>
+			<span id="res1">${news.title}</span><br /> <span id="res2">${news.date}</span><br />
+			<p>
+				<span id="res3">${news.description}</span>
+			</p>
+			<br />
+			<p>
+				<span id="res4">${news.news}</span>
+			</p>
+			<br /> <br /> <br /> <br />
+
+			<div id="addComment">
+				<spring:message code="label.addComment" />
+				<textarea id="commentText"></textarea>
+				<button id="addBut">
+					<spring:message code="but.add" />
+				</button>
 			</div>
-			<span id="res2">Date</span>
 
-			<p>
-				Апісанне<span id="res3"></span>
-			</p>
-			<p>
-				Навіна<span id="res4"></span>
-			</p>
+			<div id="commentBlock">
+				<div id="comments"></div>
+			</div>
+
 		</div>
-
-	</div>
-	<div id="addComment">
-		Ваш каментарый:
-		<textarea id="commentText"></textarea>
-		<button id="addBut">Дадаць</button>
-	</div>
-
-	<div id="commentBlock">
-		<div id="comments"></div>
 	</div>
 
 

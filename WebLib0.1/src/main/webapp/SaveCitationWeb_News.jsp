@@ -19,13 +19,13 @@
 
 <body>
 
-	<div id="addNews">
-		<input type="text" placeholder="Назва" size="26" id="title">
+	<div id="addNews" align="center">
+	<!-- <input type="text" placeholder="Назва" size="26" id="title">
 		<textarea placeholder="Апісанне" id="description" rows="5" cols="22"></textarea>
 		<textarea placeholder="Навіна" id="news" rows="13" cols="22"></textarea>
 		<button id="add">
-			<spring:message code="but.addNews" />
-		</button>
+			<spring:message code="but.add" />
+		</button>-->
 		<a href="addNewsPage"><spring:message code="label.addNews"/></a>
 		
 	</div>
@@ -37,7 +37,7 @@
 			<c:forEach items="${news}" var="news">
 				<div class="newsClass">
 					<div id="titleRes">
-						<b>${news.title}</b>
+						<b><a href="savecitation_viewnews_${news.id}">${news.title}</a></b>
 					</div>
 					<span id="dateRes"> ${news.date}</span>
 					<p>
