@@ -86,14 +86,13 @@
 .commentClass {
 	font-size: 11pt;
 	font-family: Monotype Corsiva;
-	min-width: 600px;
+	min-width: 500px;
 	min-height: 100px;
 	margin-left: 60px;
 	margin-right: 60px;
 	margin-top: 20px;
 	padding: 10px;
 	border-bottom: 1pt solid black;
-	margin-left: 60px;
 	word-wrap: break-word;
 }
 
