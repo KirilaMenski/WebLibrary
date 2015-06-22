@@ -37,6 +37,7 @@ public class NewsServiceImpl implements NewsService {
 
 	}
 
+	@Transactional
 	public List<News> getAllNews() throws SQLException {
 		List<News> newsList = new ArrayList<News>();
 		try {
@@ -47,12 +48,33 @@ public class NewsServiceImpl implements NewsService {
 		return newsList;
 	}
 
-	public News getNewsById(int id) throws SQLException {
+	@Transactional
+	public News getNewsById(long id) throws SQLException {
 		//try{
 			return newsDAO.getNewsById(id);
 		//}catch(Exception e){
 			//e.printStackTrace();
 		//}
+	}
+
+	@Transactional
+	public void editNews(News news) throws SQLException {
+		try{
+			news.setDate(hour + ":" + min + " " + day+"."+month+"."+year);
+			newsDAO.updateNews(news);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Transactional
+	public void deleteNews(News news) throws SQLException {
+		try{
+		newsDAO.deleteNews(news);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 }

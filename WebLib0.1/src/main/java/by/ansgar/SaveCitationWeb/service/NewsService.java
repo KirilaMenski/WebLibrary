@@ -9,8 +9,12 @@ public interface NewsService {
 	
 	public void addNews(News news) throws SQLException;
 	
+	public void editNews(News news) throws SQLException;
+	
+	public void deleteNews (News news) throws SQLException;
+	
 	public List<News> getAllNews () throws SQLException;
 	
-	public News getNewsById (int id) throws SQLException;
+	public News getNewsById (long id) throws SQLException;
 
 }
