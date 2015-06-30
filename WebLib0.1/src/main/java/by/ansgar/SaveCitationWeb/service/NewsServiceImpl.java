@@ -11,27 +11,23 @@ import org.springframework.transaction.annotation.Transactional;
 
 import by.ansgar.SaveCitationWeb.DAO.NewsDAO;
 import by.ansgar.SaveCitationWeb.entity.News;
+import by.ansgar.SaveCitationWeb.util.DateCalendar;
 
 @Service
 public class NewsServiceImpl implements NewsService {
 
 	@Autowired
-	//@Qualifier("newsDAO")
+	// @Qualifier("newsDAO")
 	private NewsDAO newsDAO;
 
-	Calendar calendar = Calendar.getInstance();
-	int year = calendar.get(Calendar.YEAR);
-	int month = calendar.get(Calendar.MONTH) + 1;
-	int day = calendar.get(Calendar.DAY_OF_MONTH);
-	int hour = calendar.get(Calendar.HOUR_OF_DAY);
-	int min = calendar.get(Calendar.MINUTE);
-	
 	@Transactional
 	public void addNews(News news) throws SQLException {
-		news.setDate(hour + ":" + min + " " + day+"."+month+"."+year);
-		try{
+		news.setDate(DateCalendar.hour + ":" + DateCalendar.min + " "
+				+ DateCalendar.day + "." + DateCalendar.month + "."
+				+ DateCalendar.year);
+		try {
 			newsDAO.addNews(news);
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
@@ -50,29 +46,27 @@ public class NewsServiceImpl implements NewsService {
 
 	@Transactional
 	public News getNewsById(long id) throws SQLException {
-		//try{
-			return newsDAO.getNewsById(id);
-		//}catch(Exception e){
-			//e.printStackTrace();
-		//}
+		return newsDAO.getNewsById(id);
 	}
 
 	@Transactional
 	public void editNews(News news) throws SQLException {
-		try{
-			news.setDate(hour + ":" + min + " " + day+"."+month+"."+year);
+		try {
+			news.setDate(DateCalendar.hour + ":" + DateCalendar.min + " "
+					+ DateCalendar.day + "." + DateCalendar.month + "."
+					+ DateCalendar.year);
 			newsDAO.updateNews(news);
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	@Transactional
 	public void deleteNews(News news) throws SQLException {
-		try{
-		newsDAO.deleteNews(news);
-		}catch(Exception e){
+		try {
+			newsDAO.deleteNews(news);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
