@@ -23,7 +23,7 @@ public class News {
 	private String news;
 	@Column(name="DATE")
 	private String date;
-	
+
 	public News(){
 		
 	}
