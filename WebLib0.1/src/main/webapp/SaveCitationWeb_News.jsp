@@ -27,7 +27,6 @@
 			<spring:message code="but.add" />
 		</button>-->
 		<a href="addNewsPage"><spring:message code="label.addNews"/></a>
-		
 	</div>
 
 

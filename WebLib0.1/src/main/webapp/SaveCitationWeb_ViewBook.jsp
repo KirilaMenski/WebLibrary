@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -7,33 +8,32 @@
   "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="styleNews.css">
 <script type='text/javascript'
 	src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/animate.js"></script>
+<script type="text/javascript" src="js/newsView_js.js"></script>
 <%@ include file="pattern/main.jsp"%>
 <title>Library</title>
 </head>
 
 <body>
-	
-	<div id="addGenre" align="center">
-	<!-- <input type="text" placeholder="Назва" size="26" id="title">
-		<textarea placeholder="Апісанне" id="description" rows="5" cols="22"></textarea>
-		<textarea placeholder="Навіна" id="news" rows="13" cols="22"></textarea>
-		<button id="add">
-			<spring:message code="but.add" />
-		</button>-->
-		<a href="addGenrePage"><spring:message code="label.addGenre"/></a>
-	</div>
-	
+
 	<div id="window">
-		<div id="text">
-			<c:forEach items="${genre}" var="genre">
-				<a href="savecitation_genre_${genre.id}"><img alt="${genre.genre}" src="${genre.picture}"></a>
-			</c:forEach>
+		<div id="view">
+		<img src="${books.picture}"> <br />
+		${books.author}<br />
+		${books.title}<br />
+		${books.series}
+		${books.num_series}<br />
+		${books.year}<br />
+		${books.description}<br />
+		
+
+			
+
 		</div>
 	</div>
 

@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -12,31 +13,24 @@
 <script type='text/javascript'
 	src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/animate.js"></script>
 <%@ include file="pattern/main.jsp"%>
 <title>Library</title>
 </head>
-
 <body>
-	
-	<div id="addGenre" align="center">
-	<!-- <input type="text" placeholder="Назва" size="26" id="title">
-		<textarea placeholder="Апісанне" id="description" rows="5" cols="22"></textarea>
-		<textarea placeholder="Навіна" id="news" rows="13" cols="22"></textarea>
-		<button id="add">
-			<spring:message code="but.add" />
-		</button>-->
-		<a href="addGenrePage"><spring:message code="label.addGenre"/></a>
-	</div>
-	
-	<div id="window">
-		<div id="text">
-			<c:forEach items="${genre}" var="genre">
-				<a href="savecitation_genre_${genre.id}"><img alt="${genre.genre}" src="${genre.picture}"></a>
-			</c:forEach>
-		</div>
-	</div>
 
+
+	<div id="window">
+
+		<div id="addGenreForm">
+			<form:form action="addGenre" method="POST" commandName="genre">
+				<form:input type="text" placeholder="Шлях да карцінкі" id="picture" path="picture"/>
+				<form:input placeholder="Жанр" id="genre" path="genre"/>
+				<input type="submit" value="<spring:message code="but.add"/>" />
+			</form:form>
+		</div>
+
+
+	</div>
 
 </body>
 </html>

@@ -81,8 +81,32 @@ body {
 	color: black;
 	text-decoration: none;
 }
+#addGenre {
+	position: absolute;
+	top: 92%;
+	right: 72%;
+	width: 15%;
+	height: 5%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+	font-size: 14pt;
+	font-family: Monotype Corsiva;
+}
+
+#addGenre a {
+	text-decoration: none;
+	color: black;
+	text-decoration: none;
+}
 
 #addNewsForm {
+	position: absolute;
+	top: 2%;
+	right: 5%;
+	width: 90%;
+	height: 50%;
+}
+
+#addGenreForm {
 	position: absolute;
 	top: 2%;
 	right: 5%;
@@ -93,7 +117,7 @@ body {
 #description {
 	resize: none;
 	width: 690px;
-	height: 250px;
+	height: 100px;
 }
 
 #title {
