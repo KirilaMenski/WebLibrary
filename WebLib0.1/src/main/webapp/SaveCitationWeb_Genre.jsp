@@ -32,19 +32,29 @@
 
 	<div id="window">
 
-		<div id="newsBlock">
+		<div id="genreBlock">
 			<c:forEach items="${genreBooks}" var="genreBooks">
-				<div class="newsClass">
-					<div id="titleRes">
-						<b><a href="savecitation_viewbook_${genreBooks.id}"><img height="125" width="75"
-								src="${genreBooks.picture}"></a></b>
-					</div>
-					<span id="dateRes"> ${genreBooks.date}</span>
-					<p>
-						<span id="descriptionRes">${genreBooks.description}</span>
-					</p>
+				<div id="genre_books">
+					<table width="600px">
+						<tr>
+							<td width="100px" rowspan="3"><a
+								href="savecitation_viewbook_${genreBooks.id}"><img
+									height="125" width="75" src="${genreBooks.picture}"></a></td>
+							<td width="100px"><spring:message code="label.year" /></td>
+							<td colspan="2">${genreBooks.year}</td>
+						</tr>
+						<tr>
+							<td width="100px"><spring:message code="label.author" />
+							<td><a href="savecitation_viewauthor_${genreBooks.authId}">${genreBooks.author}</a></td>
+						</tr>
+						<tr>
+							<td width="100px"><spring:message code="label.title" /></td>
+							<td>${genreBooks.title}</td>
+						</tr>
+					</table>
 				</div>
 			</c:forEach>
+
 		</div>
 
 	</div>

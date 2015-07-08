@@ -81,6 +81,7 @@ body {
 	color: black;
 	text-decoration: none;
 }
+
 #addGenre {
 	position: absolute;
 	top: 92%;
@@ -161,12 +162,16 @@ body {
 	background-image: url(image/page5.png);
 }
 
-#text {
-	position: absolute;
-	top: 5%;
-	left: 9%;
-	font-size: 11pt;
-	font-family: Calibre;
+#window div {
+	margin: 20px;
+	font-size: 14pt;
+	font-family: Monotype Corsiva;
+}
+
+#window div div {
+	border: 1pt dotted black;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
 
 .newsClass {
@@ -181,7 +186,8 @@ body {
 	font-size: 14pt;
 	font-family: Monotype Corsiva;
 }
-.newsClass a{
+
+.newsClass a {
 	text-decoration: none;
 	color: black;
 }
@@ -235,4 +241,66 @@ body {
 #windowhead ul li li a {
 	text-decoration: none;
 	color: black;
+}
+
+#book_inf {
+	width: 700px;
+}
+
+#book_inf td {
+	border-bottom: 1pt dashed black;
+	font-size: 20px;
+	font-family: Monotype Corsiva;
+}
+
+#genre_books {
+	min-width: 600px;
+	min-height: 100px;
+	margin-left: 60px;
+	margin-right: 60px;
+	margin-top: 20px;
+	padding: 10px;
+	border-bottom: 1pt dotted black;
+	font-size: 14pt;
+	font-family: Monotype Corsiva;
+}
+
+#genre_books a {
+	text-decoration: none;
+	color: black;
+}
+
+#prog_inf {
+	width: 700px;
+}
+
+#prog_inf td {
+	border-bottom: 1pt dashed black;
+	font-size: 20px;
+	font-family: Monotype Corsiva;
+}
+
+#authorBooksBlock {
+	min-width: 700px;
+	border-top: 1pt solid black;
+}
+
+#books {
+	width: 650px;
+	border-bottom: 1pt dashed black;
+}
+
+#books img {
+	width: 75px;
+	height: 125px;
+}
+
+#author_inf {
+	width: 700px;
+}
+
+#author_inf td {
+	border-bottom: 1pt dashed black;
+	font-size: 20px;
+	font-family: Monotype Corsiva;
 }

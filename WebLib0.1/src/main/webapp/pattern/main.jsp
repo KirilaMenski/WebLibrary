@@ -59,33 +59,22 @@
 
 		<div id="windowhead">
 			<ul>
-				<li><a href="savecitation"><spring:message
-							code="page.main" /></a>
-					<ul>
-						<!-- Выправіць -->
-						<li><a href="SaveCitationWeb.jsp" title="Project"><spring:message
-									code="label.aboutProj" /></a></li>
-						<!-- Выправіць -->
-						<li><a href="SaveCitationWeb.jsp" title="Author"><spring:message
-									code="label.aboutAuthor" /></a></li>
-					</ul></li>
+				<li><a href="savecitation"><spring:message code="page.main" /></a>
+				</li>
 				<li><a href="savecitation_news"><spring:message
 							code="page.news" /></a></li>
 				<li><a href="savecitation_lib"><spring:message
-							code="page.lib" /></a></li>
+							code="page.lib" /></a>
+					<ul>
+						<li><a href="savecitation_authors"><spring:message
+									code="label.authors" /></a></li>
+						<li><a href="savecitation_books"><spring:message code="label.books" /></a></li>
+						<li><a href="savecitation_lib"><spring:message code="label.genre" /></a></li>
+					</ul></li>
 				<li><a href="savecitation_chat"><spring:message
 							code="page.chat" /></a></li>
 				<li><a href="savecitation_programs"><spring:message
-							code="page.prog" /></a>
-					<ul>
-						<!-- Выправіць -->
-						<li><a href="SaveCitationWeb_Program_PC.jsp" title="Для ПК"><spring:message
-									code="label.PC" /></a></li>
-						<!-- Выправіць -->
-						<li><a href="SaveCitationWeb_Program_Mobile.jsp"
-							title="Для мабільных прылад"><spring:message
-									code="label.mobiles" /></a></li>
-					</ul></li>
+							code="page.prog" /></a></li>
 			</ul>
 
 		</div>

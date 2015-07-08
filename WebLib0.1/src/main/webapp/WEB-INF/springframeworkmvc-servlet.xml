@@ -16,7 +16,7 @@
 	<mvc:annotation-driven />
 	<mvc:default-servlet-handler /> <!-- Решает проблему подгрузки css -->
 	<context:annotation-config />
-	<context:component-scan base-package="by.ansgar.SaveCitationWeb" />
+	<context:component-scan base-package="by.ansgar.weblib" />
 	<!--<context:component-scan base-package="by.ansgar.SaveCitationWeb.service.NewsServiceImpl" 
 		/> <context:component-scan base-package="by.ansgar.SaveCitationWeb.DAOImpl.NewsDAOImpl" 
 		/> <bean id="service" class="by.ansgar.SaveCitationWeb.service.NewsServiceImpl" 
@@ -73,7 +73,10 @@
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="by.ansgar.SaveCitationWeb.entity" />
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="packagesToScan" value="by.ansgar.weblib" />
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>

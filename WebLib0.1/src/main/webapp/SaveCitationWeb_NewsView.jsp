@@ -48,8 +48,7 @@
 				</form:form>
 			</div>
 
-			<div id="commentBlock">
-				<div id="comments">
+	
 					<c:forEach items="${linkNewsCom}" var="linkNewsCom">
 						<div class='commentClass'>
 							<p>
@@ -61,8 +60,6 @@
 							</p>
 						</div>
 					</c:forEach>
-				</div>
-			</div>
 
 		</div>
 	</div>

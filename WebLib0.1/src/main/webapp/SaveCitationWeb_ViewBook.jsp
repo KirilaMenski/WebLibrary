@@ -23,17 +23,57 @@
 
 	<div id="window">
 		<div id="view">
-		<img src="${books.picture}"> <br />
-		${books.author}<br />
-		${books.title}<br />
-		${books.series}
-		${books.num_series}<br />
-		${books.year}<br />
-		${books.description}<br />
-		
 
-			
+			<table id="book_inf">
+				<tr>
+					<td rowspan="4"><img height="270" width="195"
+						src="${books.picture}"></td>
+					<td></td>
+					<td><strong><spring:message code="label.title" /></strong></td>
+					<td>${books.title}</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><strong><spring:message code="label.year" /></strong></td>
+					<td>${books.year}</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><strong><spring:message code="label.author" /></strong></td>
+					<td><a href="savecitation_viewauthor_${books.authId}">${books.author}</a></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><strong><spring:message code="label.series" /></strong></td>
+					<td>${books.series}-${books.num_series}</td>
+				</tr>
+				<tr>
+					<td colspan="4">${books.description}</td>
+				</tr>
+			</table>
+			<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+			<br />
+			<div id="addComment">
+				<form:form action="addBookComment" method="POST"
+					commandName="booksCom">
+					<spring:message code="label.addComment" />
+					<form:textarea id="commentText" path="comments"></form:textarea>
+					<input type="submit" value="<spring:message code="but.add"/>" />
+				</form:form>
+			</div>
 
+
+			<c:forEach items="${linkBookCom}" var="linkBookCom">
+				<div class='commentClass'>
+					<p>
+						<strong><span id="userNameComment">${linkBookCom.userName}</span><br /></strong>
+						<span id="dateComment">${linkBookCom.date}</span>
+					</p>
+					<p>
+						<span id="comment">${linkBookCom.comments}</span>
+					</p>
+				</div>
+			</c:forEach>
 		</div>
 	</div>
 

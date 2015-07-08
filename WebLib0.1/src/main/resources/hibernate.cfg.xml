@@ -16,7 +16,17 @@
 		<property name="connection.password">yj55</property>
 
 
-		<mapping class="by.ansgar.SaveCitationWeb.entity.Users" />
-		<mapping class="by.ansgar.SaveCitationWeb.entity.News" />
+		<mapping class="by.ansgar.weblib.entity.Users" />
+		<mapping class="by.ansgar.weblib.entity.News" />
+		<mapping class="by.ansgar.weblib.entity.LinkNewsCom" />
+		<mapping class="by.ansgar.weblib.entity.NewsComments" />
+		<mapping class="by.ansgar.weblib.entity.Authors" />
+		<mapping class="by.ansgar.weblib.entity.Books" />
+		<mapping class="by.ansgar.weblib.entity.BooksComments" />
+		<mapping class="by.ansgar.weblib.entity.Genre" />
+		<mapping class="by.ansgar.weblib.entity.LinkAuthorsBooks" />
+		<mapping class="by.ansgar.weblib.entity.LinkBooksComments" />
+		<mapping class="by.ansgar.weblib.entity.LinkGenreBooks" />
+		<mapping class="by.ansgar.weblib.entity.Programm" />
 	</session-factory>
 </hibernate-configuration>
