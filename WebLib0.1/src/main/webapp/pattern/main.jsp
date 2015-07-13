@@ -8,6 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="js/ajax.js"></script>
 
 <title>Library</title>
 </head>
@@ -34,7 +35,7 @@
 		<div id="searchblock">
 			<spring:message code="label.search" />
 			: <input id="textsearch" type="text" size="20">
-			<button id="butsearch">
+			<button id="butsearch" onclick="search()">
 				<spring:message code="but.search" />
 			</button>
 		</div>
@@ -45,11 +46,15 @@
 						<spring:message code="label.enter" />
 					</p></a>
 				<div>
-					<input type="text" placeholder="Логін"><input
-						type="password" placeholder="Пароль">
-					<button id="enterbut">
+					<input type="text" placeholder="Логін" id="user_name"><input
+						type="password" placeholder="Пароль" id="user_pass">
+					<button id="enterbut" onclick="enterToAccount()">
 						<spring:message code="but.enter" />
 					</button>
+					<button id="exitbut" onclick="exiteFromAccount()">
+						<spring:message code="but.exit" />
+					</button><br/>
+					<label id="hello"></label>
 				</div>
 				<a href="savecitation_reg"><p id="regis">
 						<spring:message code="label.signUp" />
@@ -78,5 +83,6 @@
 			</ul>
 
 		</div>
+		
 </body>
 </html>

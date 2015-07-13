@@ -7,18 +7,14 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$(document).click(function(e) {
 		if ($(e.target).closest('#logintext').length)
-			return;// если в поле есть текст -> return
-		$('#logintext div').hide();// скрываем блок
-		e.stopPropagation();// останавливает всплытие
-							// события клик
+			return;
+		$('#logintext div').hide();
+		e.stopPropagation();
 	});
-	$('#logintext a').click(function() {// mouseenter курсор
-										// наведён на ссылку,
-										// click клик по ссылке
-		$(this).next().show();// показывать этот блок
+	$('#logintext a').click(function() {
+		$(this).next().show();
 	});
-	$('#logintext').mouseleave(function() {// курсор ушел с
-											// сылки
+	$('#logintext').mouseleave(function() {
 		var x = 1;
 		$('input:text', this).each(function() {
 			if (this.value)

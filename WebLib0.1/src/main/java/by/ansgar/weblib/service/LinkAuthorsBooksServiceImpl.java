@@ -21,7 +21,7 @@ public class LinkAuthorsBooksServiceImpl implements LinkAuthorsBooksService{
 	public void addAuthorsBooks(LinkAuthorsBooks linkAuthosBooks)
 			throws SQLException {
 		try{
-			
+			linkAuthorsBooksDAO.addAuthorsBooks(linkAuthosBooks);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

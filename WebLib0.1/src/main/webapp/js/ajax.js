@@ -26,6 +26,11 @@ function delegateEvent(e) {
 		change(document.getElementById("email"));
 };
 
+function returneToMainPage() {
+	alert('You are not accepted the rule!');
+	location.href = "savecitation.by";
+}
+
 var reg = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
 
 function change(inputName) {
@@ -117,6 +122,40 @@ function receiveMessageFromServer() {
 		document.getElementById("email").value = xmlHttpRequest.responseXML
 				.getElementsByTagName("responseFromServer")[0].text;
 	location.href = "savecitation.by";
+}
+/*
+ * Check login and password, enter in account
+ */
+function enterToAccount() {
+	var userName = document.getElementById("user_name").value;
+	var userPass = document.getElementById("user_pass").value;
+	// if (userName != "" && userPass != "") {
+	alert("Sorry! but this button doesn't work");
+	$.ajax({
+		url : 'enter_account',
+		type : 'POST',
+		data : {
+			name : userName,
+			pass : userPass
+		},
+		succes : function(data) {
+			var result = data.name;
+			$('#hello').Text(result);
+		}
+	});
+	// } else {
+	// alert("Please, check your login and password");
+	// }
+}
+/*
+ * exit from account
+ */
+function exiteFromAccount() {
+
+}
+
+function search(){
+	alert("Sorry! but this button doesn't work");
 }
 
 function clean() {

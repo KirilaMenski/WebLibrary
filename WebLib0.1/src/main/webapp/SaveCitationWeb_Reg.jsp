@@ -56,7 +56,7 @@
 							code="label.readRule" /></a>
 				</p>
 				<p align="center">
-					<button id="notaccept" onclick="">
+					<button id="notaccept" onclick="returneToMainPage()">
 						<spring:message code="but.notAccept" />
 					</button>
 					<button id="accept" onclick="sendMessageToServer()">

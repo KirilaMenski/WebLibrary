@@ -1,8 +1,9 @@
 package by.ansgar.weblib.controllers;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,6 +50,7 @@ public class LibraryController {
 
 	private long genreId;
 	private long booksId;
+	private long authId;
 
 	/*
 	 * LIBRARY BLOCK
@@ -113,8 +115,31 @@ public class LibraryController {
 	public String addBook(@ModelAttribute Books books, BindingResult result) {
 
 		try {
+			authId = books.getAuthId();
+			System.out.println(books.getAuthId());
 			booksService.addBooks(books);
 			assigmentGenreBooks(genreId);
+			assigmentAuthBooks(authId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return "forward:/savecitation_lib";
+	}
+	
+	@RequestMapping(value = "addAuthorPage", method = { RequestMethod.GET,
+			RequestMethod.POST })
+	public String addAuthorPage() {
+
+		return "SaveCitationWeb_AddAuthor";
+	}
+	
+	@RequestMapping(value = "addAuthors", method = { RequestMethod.GET,
+			RequestMethod.POST })
+	public String addAuthor(@ModelAttribute Authors authors, BindingResult result) {
+
+		try {
+			authorService.addAuthor(authors);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -197,6 +222,11 @@ public class LibraryController {
 	public Genre genre() {
 		return new Genre();
 	}
+	
+	@ModelAttribute("authors")
+	public Authors authors(){
+		return new Authors();
+	}
 
 	@ModelAttribute("books")
 	public Books books() {
@@ -233,6 +263,18 @@ public class LibraryController {
 
 		linkBooksComService.addBooksCom(linkBooksCom);
 
+	}
+
+	private void assigmentAuthBooks(long id) throws SQLException {
+		LinkAuthorsBooks linkAuthBooks = new LinkAuthorsBooks();
+		
+		List<Books> booksList = booksService.getAllBooks();
+		
+		linkAuthBooks.setBooks(booksService.getBooksById(booksList.size()));
+		
+		linkAuthBooks.setAuthors(authorService.getAuthor(id));
+		
+		linkAuthBookService.addAuthorsBooks(linkAuthBooks);
 	}
 
 }

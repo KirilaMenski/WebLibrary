@@ -30,12 +30,12 @@
 						src="${prog.picture}"></td>
 					<td></td>
 					<td><strong><spring:message code="label.developer" /></strong></td>
-					<td><a href="${prog.website}">${prog.developer}</a></td>
+					<td>${prog.developer}</td>
 				</tr>
 				<tr>
 					<td></td>
 					<td><strong><spring:message code="label.title" /></strong></td>
-					<td>${prog.title}</td>
+					<td><a href="${prog.website}">${prog.title}</a></td>
 				</tr>
 				<tr>
 					<td></td>

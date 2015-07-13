@@ -19,7 +19,15 @@
 
 <body>
 
-
+	<div id="addNews" align="center">
+		<!-- <input type="text" placeholder="Назва" size="26" id="title">
+		<textarea placeholder="Апісанне" id="description" rows="5" cols="22"></textarea>
+		<textarea placeholder="Навіна" id="news" rows="13" cols="22"></textarea>
+		<button id="add">
+			<spring:message code="but.add" />
+		</button>-->
+		<a href="addAuthorPage"><spring:message code="label.addAuthor" /></a>
+	</div>
 	<div id="window">
 
 		<div id="authorsBlock">
@@ -33,8 +41,8 @@
 						</tr>
 						<tr>
 							<td width="100px"><spring:message code="label.author" />
-							<td><a href="savecitation_viewauthor_${allAuthors.id}">${allAuthors.firstName}
-									${allAuthors.lastName}</a></td>
+							<td><a href="savecitation_viewauthor_${allAuthors.id}">${allAuthors.id}
+									- ${allAuthors.firstName} ${allAuthors.lastName}</a></td>
 						</tr>
 					</table>
 				</div>

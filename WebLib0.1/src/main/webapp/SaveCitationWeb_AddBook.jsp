@@ -29,8 +29,11 @@
 				<spring:message code="label.title" />
 				<form:input type="text" placeholder="Назва" id="title" path="title" />
 				<spring:message code="label.author" />
-				<form:input type="text" placeholder="Назва" id="author"
+				<form:input type="text" placeholder="Аўтар" id="author"
 					path="author" />
+				<spring:message code="label.authId" />
+				<form:input type="text" placeholder="ID аўтара" name="authID"
+					path="authId" />
 				<br />
 				<spring:message code="label.year" />
 				<form:input type="text" placeholder="Назва" id="year" path="year" />
