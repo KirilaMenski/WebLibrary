@@ -24,7 +24,7 @@
 		<div id="text">
 
 			<div id="dev">
-				<img src="image/developer/KHoldeev.jpg" id="dev_photo">
+				<img src="image/developer/KHoldeev.png" id="dev_photo">
 			</div>
 			<div id="dev_inf">
 				<font size="20"><strong>Холдеев Кирилл Игоревич</strong></font><br />

@@ -15,8 +15,8 @@ $(document).ready(function() {
 	$('#dev_photo').width(170).height(200).hover(function() {
 
 		$(this).stop().animate({
-			width : 250,
-			height: 280
+			width : 470,
+			height: 575
 		});
 	}, function() {
 		$(this).stop().animate({
