@@ -35,6 +35,7 @@ public class AuthorsDAOImpl implements AuthorsDAO {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Authors> getAllAuthors() throws SQLException {
 		List<Authors> getAuthors = new ArrayList<Authors>();
 		try {
