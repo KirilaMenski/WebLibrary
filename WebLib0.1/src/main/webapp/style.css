@@ -331,3 +331,12 @@ body {
 	size: 15px;
 	border-bottom: 1pt solid gray;
 }
+#hello{
+	position: absolute;
+	top: 50%;
+	left: 30.5%;
+	font-family: Monotype Corsiva;
+	font-size: 25px;
+	width: 500px;
+	height: 30px;
+}

@@ -4,6 +4,10 @@ public class Response {
 	private String userName;
 	private int userPassword;
 	
+	public Response(){
+		
+	}
+	
 	public String getUserName() {
 		return userName;
 	}

@@ -123,38 +123,65 @@ function receiveMessageFromServer() {
 				.getElementsByTagName("responseFromServer")[0].text;
 	location.href = "savecitation.by";
 }
+
 /*
  * Check login and password, enter in account
  */
 function enterToAccount() {
-	var userName = document.getElementById("user_name").value;
-	var userPass = document.getElementById("user_pass").value;
+	/*var userName = document.getElementById("user_name");
+	var userPass = document.getElementById("user_pass");
 	// if (userName != "" && userPass != "") {
-	alert("Sorry! but this button doesn't work");
+	
 	$.ajax({
 		url : 'enter_account',
 		type : 'POST',
-		data : {
-			name : userName,
-			pass : userPass
-		},
+		dataType : 'json',
+		contentType : 'application/json',
+		mimeType : 'application/json',
+		data : ({
+			name : userName.value,
+			pass : userPass.value
+		}),
 		succes : function(data) {
 			var result = data.name;
 			$('#hello').Text(result);
 		}
 	});
+	alert("Sorry! but this button doesn't work"); 
 	// } else {
 	// alert("Please, check your login and password");
 	// }
+		*/
+		var userName = $("#user_name").val(); 
+		var userPass = $("#user_pass").val(); 
+		
+		$.ajax({
+			url : 'enter_account',
+			/*type: 'GET',
+			dataType: 'json',
+			contentType: 'application/json',
+		    mimeType: 'application/json',*/
+			data : ({
+				name : userName,
+				pass : userPass
+			}),
+			success: function (data) {	
+				/*var name = 'Hello, ' + userName + '! ';*/
+				$("#hello").text(data);
+				
+			}
+		});
 }
 /*
  * exit from account
  */
 function exiteFromAccount() {
-
+	document.getElementById('user_name').value = "";
+	document.getElementById('user_pass').value = "";
+	document.getElementById('hello').value = " ";
 }
 
-function search(){
+function search() {
 	alert("Sorry! but this button doesn't work");
 }
 

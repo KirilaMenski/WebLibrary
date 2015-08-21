@@ -8,8 +8,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="image/books2.png">
 <script type="text/javascript" src="js/ajax.js"></script>
-
+<script type='text/javascript'
+	src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
 <title>Library</title>
 </head>
 
@@ -53,15 +55,18 @@
 					</button>
 					<button id="exitbut" onclick="exiteFromAccount()">
 						<spring:message code="but.exit" />
-					</button><br/>
-					<label id="hello"></label>
+					</button>
+					<br />
+
 				</div>
+
+
 				<a href="savecitation_reg"><p id="regis">
 						<spring:message code="label.signUp" />
 					</p></a>
 			</div>
 		</div>
-
+		<div id="hello"></div>
 		<div id="windowhead">
 			<ul>
 				<li><a href="savecitation"><spring:message code="page.main" /></a>
@@ -73,8 +78,10 @@
 					<ul>
 						<li><a href="savecitation_authors"><spring:message
 									code="label.authors" /></a></li>
-						<li><a href="savecitation_books"><spring:message code="label.books" /></a></li>
-						<li><a href="savecitation_lib"><spring:message code="label.genre" /></a></li>
+						<li><a href="savecitation_books"><spring:message
+									code="label.books" /></a></li>
+						<li><a href="savecitation_lib"><spring:message
+									code="label.genre" /></a></li>
 					</ul></li>
 				<li><a href="savecitation_chat"><spring:message
 							code="page.chat" /></a></li>
@@ -83,6 +90,5 @@
 			</ul>
 
 		</div>
-		
 </body>
 </html>
