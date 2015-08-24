@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
@@ -64,9 +65,10 @@
 				<a href="savecitation_reg"><p id="regis">
 						<spring:message code="label.signUp" />
 					</p></a>
+				<a href="logout">Logout</a>
 			</div>
 		</div>
-		<div id="hello"></div>
+		<div id="hello"> Hello, <sec:authentication property="name"/>!!!</div>
 		<div id="windowhead">
 			<ul>
 				<li><a href="savecitation"><spring:message code="page.main" /></a>
