@@ -1,4 +1,6 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -27,7 +29,8 @@
 		<button id="add">
 			<spring:message code="but.add" />
 		</button>-->
-		<a href="addNewsPage"><spring:message code="label.addNews" /></a>
+			<a href="addNewsPage"><spring:message code="label.addNews" /></a>
+
 	</div>
 
 
@@ -38,8 +41,8 @@
 				<div class="newsClass">
 					<span id="titleRes"> <b><a
 							href="savecitation_viewnews_${news.id}">${news.title}</a></b>
-					</span><br /> <span id="dateRes"> ${news.date}</span> <br /> <br />
-					<span id="descriptionRes">${news.description}</span>
+					</span><br /> <span id="dateRes"> ${news.date}</span> <br /> <br /> <span
+						id="descriptionRes">${news.description}</span>
 				</div>
 			</c:forEach>
 		</div>
