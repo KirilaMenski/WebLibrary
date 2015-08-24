@@ -19,11 +19,10 @@
 	<mvc:default-servlet-handler /> <!-- Решает проблему подгрузки css -->
 	<context:annotation-config />
 	<context:component-scan base-package="by.ansgar.weblib" />
-	<!--<context:component-scan base-package="by.ansgar.SaveCitationWeb.service.NewsServiceImpl" 
-		/> <context:component-scan base-package="by.ansgar.SaveCitationWeb.DAOImpl.NewsDAOImpl" 
-		/> <bean id="service" class="by.ansgar.SaveCitationWeb.service.NewsServiceImpl" 
-		/> <bean id="newsDAO" class="by.ansgar.SaveCitationWeb.DAOImpl.NewsDAOImpl" 
-		/> -->
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+	    <property name="cacheSeconds" value="0" />
+	</bean>
 
 	<bean id="jspViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
