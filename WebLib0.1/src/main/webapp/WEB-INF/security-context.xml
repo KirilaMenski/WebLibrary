@@ -7,16 +7,16 @@
 
 
 	<http use-expressions="true">
-		<intercept-url pattern="/**" access="isAuthenticated()" />
+		<intercept-url pattern="/**" access="isAuthenticated()"/>
 		<form-login/>
-		<logout logout-url="/logout" logout-success-url="/savecitation.by" />
+		<logout logout-url="/logout" logout-success-url="/login"/>
 	</http>
 
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>
-				<user name="admin" password="admin" authorities="Admin, User" />
-				<user name="user" password="user" authorities="User" />
+				<user name="admin" password="admin" authorities="Admin, User"/>
+				<user name="user" password="user" authorities="User"/>
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>

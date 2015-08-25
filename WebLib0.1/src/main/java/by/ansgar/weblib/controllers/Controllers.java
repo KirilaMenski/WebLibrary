@@ -13,19 +13,18 @@ public class Controllers {
 	 */
 	@RequestMapping(value = "/savecitation", method = { RequestMethod.GET,
 			RequestMethod.POST })
-	public ModelAndView mainPage() {
+	public ModelAndView turnUpMainPage() {
 		ModelAndView modelView = new ModelAndView();
 		modelView.setViewName("SaveCitationWeb");
 		return modelView;
 	}
-	
 
 	/*
 	 * CHAT BLOCK
 	 */
 	@RequestMapping(value = "/savecitation_chat", method = { RequestMethod.GET,
 			RequestMethod.POST })
-	public ModelAndView chatPage() {
+	public ModelAndView turnUpChatPage() {
 		ModelAndView modelView = new ModelAndView();
 		modelView.setViewName("SaveCitationWeb_Chat");
 		return modelView;
@@ -33,7 +32,7 @@ public class Controllers {
 
 	@RequestMapping(value = "/savecitation_reg", method = { RequestMethod.GET,
 			RequestMethod.POST })
-	public ModelAndView regPage() {
+	public ModelAndView turnUpRegPage() {
 		ModelAndView modelView = new ModelAndView();
 		modelView.setViewName("SaveCitationWeb_Reg");
 		return modelView;
@@ -41,7 +40,7 @@ public class Controllers {
 
 	@RequestMapping(value = "/savecitation_rule", method = { RequestMethod.GET,
 			RequestMethod.POST })
-	public ModelAndView rulePage() {
+	public ModelAndView turnUpRulePage() {
 		ModelAndView modelView = new ModelAndView();
 		modelView.setViewName("SaveCitationWeb_rule");
 		return modelView;

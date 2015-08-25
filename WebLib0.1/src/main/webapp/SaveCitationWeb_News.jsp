@@ -21,17 +21,13 @@
 </head>
 
 <body>
+	<sec:authorize access="hasRole('Admin')">
+		<div id="addNews" align="center">
 
-	<div id="addNews" align="center">
-		<!-- <input type="text" placeholder="Назва" size="26" id="title">
-		<textarea placeholder="Апісанне" id="description" rows="5" cols="22"></textarea>
-		<textarea placeholder="Навіна" id="news" rows="13" cols="22"></textarea>
-		<button id="add">
-			<spring:message code="but.add" />
-		</button>-->
 			<a href="addNewsPage"><spring:message code="label.addNews" /></a>
 
-	</div>
+		</div>
+	</sec:authorize>
 
 
 	<div id="window">
