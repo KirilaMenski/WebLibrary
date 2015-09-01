@@ -16,7 +16,6 @@ import by.ansgar.weblib.entity.News;
 public class NewsDAOImpl implements NewsDAO {
 	
 	@Autowired
-//	@Qualifier("sessionFactory")
 	private SessionFactory sessionFactory;
 
 	public void addNews(News news) throws SQLException {
@@ -39,6 +38,7 @@ public class NewsDAOImpl implements NewsDAO {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<News> getAllNews() throws SQLException {
 		List<News> allNews = new ArrayList<News>();
 		try {
