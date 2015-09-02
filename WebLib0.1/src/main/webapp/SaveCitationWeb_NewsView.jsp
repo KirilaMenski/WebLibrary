@@ -1,7 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ include file="pattern/include.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
@@ -33,12 +30,13 @@
 			<p>
 				<span id="res4">${news.news}</span>
 			</p>
-			<form:form action="savecitation_deleteNews_${news.id}" method="POST"
-				commandName="news">
-				<input type="submit" name="action" value="Edit" />
-				<input type="submit" name="action" value="Delete" />
-			</form:form>
-
+			<sec:authorize access="hasRole('ADMIN')">
+				<form:form action="savecitation_deleteNews_${news.id}" method="POST"
+					commandName="news">
+					<input type="submit" name="action" value="Edit" />
+					<input type="submit" name="action" value="Delete" />
+				</form:form>
+			</sec:authorize>
 			<div id="addComment">
 				<form:form action="addNewsComment" method="POST"
 					commandName="newsComments">
@@ -48,18 +46,18 @@
 				</form:form>
 			</div>
 
-	
-					<c:forEach items="${linkNewsCom}" var="linkNewsCom">
-						<div class='commentClass'>
-							<p>
-								<strong><span id="userNameComennt">${linkNewsCom.userName}</span><br /></strong>
-								<span id="dateComment">${linkNewsCom.date}</span>
-							</p>
-							<p>
-								<span id="comment">${linkNewsCom.comment}</span>
-							</p>
-						</div>
-					</c:forEach>
+
+			<c:forEach items="${linkNewsCom}" var="linkNewsCom">
+				<div class='commentClass'>
+					<p>
+						<strong><span id="userNameComennt">${linkNewsCom.userName}</span><br /></strong>
+						<span id="dateComment">${linkNewsCom.date}</span>
+					</p>
+					<p>
+						<span id="comment">${linkNewsCom.comment}</span>
+					</p>
+				</div>
+			</c:forEach>
 
 		</div>
 	</div>

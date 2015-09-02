@@ -1,5 +1,4 @@
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="pattern/include.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
@@ -19,15 +18,17 @@
 
 <body>
 
-	<div id="addNews" align="center">
-		<!-- <input type="text" placeholder="Назва" size="26" id="title">
+	<sec:authorize access="hasRole('ADMIN')">
+		<div id="addNews" align="center">
+			<!-- <input type="text" placeholder="Назва" size="26" id="title">
 		<textarea placeholder="Апісанне" id="description" rows="5" cols="22"></textarea>
 		<textarea placeholder="Навіна" id="news" rows="13" cols="22"></textarea>
 		<button id="add">
 			<spring:message code="but.add" />
 		</button>-->
-		<a href="addBooksPage"><spring:message code="label.addBooks" /></a>
-	</div>
+			<a href="addBooksPage"><spring:message code="label.addBooks" /></a>
+		</div>
+	</sec:authorize>
 
 
 	<div id="window">

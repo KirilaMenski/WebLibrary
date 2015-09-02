@@ -1,7 +1,4 @@
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://www.springframework.org/security/tags"
-	prefix="sec"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="pattern/include.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
@@ -21,14 +18,13 @@
 </head>
 
 <body>
-	<sec:authorize access="hasRole('Admin')">
+<sec:authorize access="hasRole('ADMIN')">
 		<div id="addNews" align="center">
 
 			<a href="addNewsPage"><spring:message code="label.addNews" /></a>
 
 		</div>
-	</sec:authorize>
-
+</sec:authorize>
 
 	<div id="window">
 

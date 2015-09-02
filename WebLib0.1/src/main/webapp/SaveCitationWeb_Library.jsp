@@ -1,6 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ include file="pattern/include.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
@@ -18,21 +16,24 @@
 </head>
 
 <body>
-	
-	<div id="addGenre" align="center">
-	<!-- <input type="text" placeholder="Назва" size="26" id="title">
+
+	<sec:authorize access="hasRole('ADMIN')">
+		<div id="addGenre" align="center">
+			<!-- <input type="text" placeholder="Назва" size="26" id="title">
 		<textarea placeholder="Апісанне" id="description" rows="5" cols="22"></textarea>
 		<textarea placeholder="Навіна" id="news" rows="13" cols="22"></textarea>
 		<button id="add">
 			<spring:message code="but.add" />
 		</button>-->
-		<a href="addGenrePage"><spring:message code="label.addGenre"/></a>
-	</div>
-	
+			<a href="addGenrePage"><spring:message code="label.addGenre" /></a>
+		</div>
+	</sec:authorize>
+
 	<div id="window">
 		<div id="text">
 			<c:forEach items="${genre}" var="genre">
-				<a href="savecitation_genre_${genre.id}"><img alt="${genre.genre}" src="${genre.picture}"></a>
+				<a href="savecitation_genre_${genre.id}"><img
+					alt="${genre.genre}" src="${genre.picture}"></a>
 			</c:forEach>
 		</div>
 	</div>
