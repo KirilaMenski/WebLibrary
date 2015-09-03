@@ -12,6 +12,7 @@
         <logout logout-success-url="/login?logout"/>
     </http>
     
+    <!--  
     <authentication-manager>
         <authentication-provider>
             <user-service>
@@ -19,6 +20,17 @@
                 <user name="user" password="user" authorities="ROLE_USER"/>
             </user-service>
         </authentication-provider>
-    </authentication-manager>
+    </authentication-manager>-->
+    
+    <beans:bean id="daoAuthenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+	    <beans:property name="userDetailsService" ref="userDetailsService" ></beans:property>
+	    
+	</beans:bean>
+	
+	<authentication-manager>
+	    <authentication-provider user-service-ref="userDetailsService">
+	        <password-encoder hash="md5"></password-encoder>
+	    </authentication-provider>
+	</authentication-manager>
 
 </beans:beans>
