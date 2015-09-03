@@ -111,7 +111,6 @@
 			<version>4.0.2.RELEASE</version>
 		</dependency>
 
-
 		<!-- Hibernate -->
 		<!-- <dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-core</artifactId> 
 			<version>5.0.0.CR1</version> </dependency> -->
