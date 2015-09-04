@@ -64,11 +64,11 @@
 					</p></a>
 
 				<c:url value="login?logout" var="logoutUrl" />
-                <a href="${logoutUrl}">Log Out</a>
+                <a href="${logoutUrl}"><spring:message code="label.logout"/></a>
 			</div>
 		</div>
 		<div id="hello">
-			Hello,
+			<spring:message code="label.helo"/>
 			<sec:authentication property="name" />
 			!!!
 		</div>
@@ -76,7 +76,7 @@
 			<ul>
 				<li><a href="savecitation"><spring:message code="page.main" /></a>
 				</li>
-				<li><a href="savecitation_news"><spring:message
+				<li><a href="savecitation_news_1"><spring:message
 							code="page.news" /></a></li>
 				<li><a href="savecitation_lib"><spring:message
 							code="page.lib" /></a>
