@@ -326,12 +326,14 @@ body {
 	width: 700px;
 	height: 720px;
 }
-#skils_inf span{
+
+#skils_inf span {
 	color: gray;
 	size: 15px;
 	border-bottom: 1pt solid gray;
 }
-#hello{
+
+#hello {
 	position: absolute;
 	top: 50%;
 	left: 30.5%;
@@ -339,4 +341,19 @@ body {
 	font-size: 25px;
 	width: 500px;
 	height: 30px;
+}
+
+.pages ul li {
+	list-style: none;
+	font-size: 25px;
+	float: left;
+}
+
+.pages ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+.pages ul li a:hover {
+	color: red;
 }
