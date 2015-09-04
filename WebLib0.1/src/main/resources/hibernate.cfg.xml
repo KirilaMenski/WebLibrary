@@ -16,7 +16,7 @@
 		<property name="connection.password">yj55</property>
 
 
-		<!-- <mapping class="by.ansgar.weblib.entity.Users" />-->
+		<mapping class="by.ansgar.weblib.entity.Users" />
 		<mapping class="by.ansgar.weblib.entity.News" />
 		<mapping class="by.ansgar.weblib.entity.LinkNewsCom" />
 		<mapping class="by.ansgar.weblib.entity.NewsComments" />
