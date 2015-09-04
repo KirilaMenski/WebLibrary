@@ -38,9 +38,14 @@
 						placeholder="Прозвішча"></input>
 				</p>
 				<p align="center">
+					<input id="login_reg" class="regtext" type="text" size="40"
+						placeholder="Логін"></input>
+				</p>
+				<p align="center">
 					<input id="password" class="regtext" type="password" size="40"
 						placeholder="Пароль"></input>
 				</p>
+				
 				<p align="center">
 					<input id="repeatpassword" class="regtext" type="password"
 						size="40" placeholder="Паўтарыце пароль"></input>
