@@ -18,13 +18,13 @@
 </head>
 
 <body>
-<sec:authorize access="hasRole('ADMIN')">
+	<sec:authorize access="hasRole('ADMIN')">
 		<div id="addNews" align="center">
 
 			<a href="addNewsPage"><spring:message code="label.addNews" /></a>
 
 		</div>
-</sec:authorize>
+	</sec:authorize>
 
 	<div id="window">
 
@@ -37,6 +37,16 @@
 						id="descriptionRes">${news.description}</span>
 				</div>
 			</c:forEach>
+		</div>
+
+		<div class="pages">
+
+			<ul id ="num_pages">
+				<c:forEach items="${page}" var="page">
+				<li><a href="savecitation_news_${page}"> - ${page} </a></li>
+				</c:forEach>
+			</ul>
+
 		</div>
 
 	</div>
