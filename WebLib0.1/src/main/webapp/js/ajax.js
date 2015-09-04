@@ -2,6 +2,7 @@
 function run() {
 	var appContainer1 = document.getElementById("name");
 	var appContainer2 = document.getElementById("lastname");
+	var appContainer6 = document.getElementById("login_reg");
 	var appContainer3 = document.getElementById("password");
 	var appContainer4 = document.getElementById("repeatpassword");
 	var appContainer5 = document.getElementById("email");
@@ -11,6 +12,7 @@ function run() {
 	appContainer3.addEventListener('blur', delegateEvent);
 	appContainer4.addEventListener('blur', delegateEvent);
 	appContainer5.addEventListener('blur', delegateEvent);
+	appContainer6.addEventListener('blur', delegateEvent);
 };
 
 function delegateEvent(e) {
@@ -18,6 +20,8 @@ function delegateEvent(e) {
 		change(document.getElementById("name"));
 	if (e.type == 'blur' && e.target.id == 'lastname')
 		change(document.getElementById("lastname"));
+	if (e.type == 'blur' && e.target.id == 'login_reg')
+		change(document.getElementById("login_reg"));
 	if (e.type == 'blur' && e.target.id == 'password')
 		change(document.getElementById("password"));
 	if (e.type == 'blur' && e.target.id == 'repeatpassword')
@@ -37,7 +41,8 @@ function change(inputName) {
 	smth = inputName;
 
 	if (smth == document.getElementById("name")
-			|| smth == document.getElementById("lastname")) {
+			|| smth == document.getElementById("lastname")
+			|| smth == document.getElementById("login_reg")) {
 		if (smth.value == "") { // введено не число
 			// показать ошибку
 			smth.classList.add("error");
@@ -89,6 +94,7 @@ function sendMessageToServer() {
 
 	if (document.getElementById("name").value != ""
 			&& document.getElementById("lastname").value != ""
+			&& document.getElementById("login_reg").value != ""
 			&& document.getElementById("password").value != ""
 			&& document.getElementById("repeatpassword").value != ""
 			&& document.getElementById("email").value != ""
@@ -99,6 +105,7 @@ function sendMessageToServer() {
 		var data = {
 			name : (document.getElementById("name").value),
 			lastname : (document.getElementById("lastname").value),
+			login : (document.getElementById("login_reg").value),
 			password : (document.getElementById("password").value),
 			email : (document.getElementById("email").value),
 		};
@@ -128,49 +135,37 @@ function receiveMessageFromServer() {
  * Check login and password, enter in account
  */
 function enterToAccount() {
-	/*var userName = document.getElementById("user_name");
-	var userPass = document.getElementById("user_pass");
-	// if (userName != "" && userPass != "") {
-	
+	/*
+	 * var userName = document.getElementById("user_name"); var userPass =
+	 * document.getElementById("user_pass"); // if (userName != "" && userPass !=
+	 * "") {
+	 * 
+	 * $.ajax({ url : 'enter_account', type : 'POST', dataType : 'json',
+	 * contentType : 'application/json', mimeType : 'application/json', data : ({
+	 * name : userName.value, pass : userPass.value }), succes : function(data) {
+	 * var result = data.name; $('#hello').Text(result); } }); alert("Sorry! but
+	 * this button doesn't work"); // } else { // alert("Please, check your
+	 * login and password"); // }
+	 */
+	var userName = $("#user_name").val();
+	var userPass = $("#user_pass").val();
+
 	$.ajax({
 		url : 'enter_account',
-		type : 'POST',
-		dataType : 'json',
-		contentType : 'application/json',
-		mimeType : 'application/json',
+		/*
+		 * type: 'GET', dataType: 'json', contentType: 'application/json',
+		 * mimeType: 'application/json',
+		 */
 		data : ({
-			name : userName.value,
-			pass : userPass.value
+			name : userName,
+			pass : userPass
 		}),
-		succes : function(data) {
-			var result = data.name;
-			$('#hello').Text(result);
+		success : function(data) {
+			/* var name = 'Hello, ' + userName + '! '; */
+			$("#hello").text(data);
+
 		}
 	});
-	alert("Sorry! but this button doesn't work"); 
-	// } else {
-	// alert("Please, check your login and password");
-	// }
-		*/
-		var userName = $("#user_name").val(); 
-		var userPass = $("#user_pass").val(); 
-		
-		$.ajax({
-			url : 'enter_account',
-			/*type: 'GET',
-			dataType: 'json',
-			contentType: 'application/json',
-		    mimeType: 'application/json',*/
-			data : ({
-				name : userName,
-				pass : userPass
-			}),
-			success: function (data) {	
-				/*var name = 'Hello, ' + userName + '! ';*/
-				$("#hello").text(data);
-				
-			}
-		});
 }
 /*
  * exit from account
@@ -188,6 +183,7 @@ function search() {
 function clean() {
 	document.getElementById("name").value = "";
 	document.getElementById("lastname").value = "";
+	document.getElementById("login_reg").value = "";
 	document.getElementById("password").value = "";
 	document.getElementById("repeatpassword").value = "";
 	document.getElementById("email").value = "";
