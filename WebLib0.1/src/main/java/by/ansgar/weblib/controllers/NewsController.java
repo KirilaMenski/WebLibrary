@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import by.ansgar.weblib.DAOImpl.NewsDAOImpl;
 import by.ansgar.weblib.entity.LinkNewsCom;
 import by.ansgar.weblib.entity.News;
 import by.ansgar.weblib.entity.NewsComments;
@@ -37,19 +38,28 @@ public class NewsController {
 	/*
 	 * NEWSLIST BLOCK
 	 */
-	@RequestMapping(value = "/savecitation_news", method = { RequestMethod.GET,
-			RequestMethod.POST })
-	public ModelAndView newsPage() throws SQLException {
+	@RequestMapping(value = "/savecitation_news_{page}", method = {
+			RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView newsPage(@PathVariable int page) throws SQLException {
 		ModelAndView modelView = new ModelAndView();
 
 		List<News> allNews = newsService.getAllNews();
+		List<News> newsOnPage = newsService.getAllNews(page);
 		List<News> newsList = new ArrayList<News>();
-		for(int i = allNews.size() - 1; i>=0; i--){
-			News news = allNews.get(i);
+		List<Integer> pages = new ArrayList<Integer>();
+
+		for (int j = 0; j < Math.ceil((double) allNews.size()
+				/ (double) NewsDAOImpl.MAX_RES); j++) {
+			pages.add(j + 1);
+		}
+
+		for (int i = newsOnPage.size() - 1; i >= 0; i--) {
+			News news = newsOnPage.get(i);
 			newsList.add(news);
 		}
-//		modelView.addObject("news", allNews);
+		// modelView.addObject("news", allNews);
 		modelView.addObject("news", newsList);
+		modelView.addObject("page", pages);
 
 		modelView.setViewName("SaveCitationWeb_News");
 		return modelView;
@@ -67,8 +77,7 @@ public class NewsController {
 			News news = newsService.getNewsById(id);
 			model.addAttribute("news", news);
 			newsId = id;
-			List<LinkNewsCom> linkNewsCom = linkNewsComService
-					.getAllComent(id);
+			List<LinkNewsCom> linkNewsCom = linkNewsComService.getAllComent(id);
 			System.out.println(linkNewsCom);
 			model.addAttribute("linkNewsCom", linkNewsCom);
 
@@ -114,7 +123,7 @@ public class NewsController {
 			e.printStackTrace();
 		}
 
-		return "forward:/savecitation_news";
+		return "forward:/savecitation_news_1";
 	}
 
 	/*
@@ -147,7 +156,7 @@ public class NewsController {
 			e.printStackTrace();
 		}
 
-		return "forward:/savecitation_news";
+		return "forward:/savecitation_news_1";
 	}
 
 	/*
@@ -171,7 +180,7 @@ public class NewsController {
 			e.printStackTrace();
 		}
 
-		return "forward:/savecitation_news";
+		return "forward:/savecitation_news_1";
 	}
 
 	@ModelAttribute("news")

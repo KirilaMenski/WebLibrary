@@ -12,6 +12,8 @@ public interface NewsDAO {
 	public void updateNews(News news) throws SQLException;
 
 	public List<News> getAllNews() throws SQLException;
+	
+	public List<News> getAllNews(int page) throws SQLException;
 
 	public void deleteNews(News news) throws SQLException;
 	

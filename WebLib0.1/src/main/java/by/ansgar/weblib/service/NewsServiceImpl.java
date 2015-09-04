@@ -43,6 +43,17 @@ public class NewsServiceImpl implements NewsService {
 		}
 		return newsList;
 	}
+	
+	@Transactional
+	public List<News> getAllNews(int page) throws SQLException {
+		List<News> newsList = new ArrayList<News>();
+		try {
+			newsList = newsDAO.getAllNews(page);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return newsList;
+	}
 
 	@Transactional
 	public News getNewsById(long id) throws SQLException {

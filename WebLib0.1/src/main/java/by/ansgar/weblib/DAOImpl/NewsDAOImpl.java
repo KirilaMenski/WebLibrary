@@ -15,6 +15,8 @@ import by.ansgar.weblib.entity.News;
 @Repository
 public class NewsDAOImpl implements NewsDAO {
 	
+	public static final int MAX_RES = 7;
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -43,6 +45,17 @@ public class NewsDAOImpl implements NewsDAO {
 		List<News> allNews = new ArrayList<News>();
 		try {
 			allNews = currentSession().createQuery("FROM News").list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		return allNews;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<News> getAllNews(int page) throws SQLException {
+		List<News> allNews = new ArrayList<News>();
+		try {
+			allNews = currentSession().createQuery("FROM News").setFirstResult(page * MAX_RES - MAX_RES).setMaxResults(MAX_RES).list();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 

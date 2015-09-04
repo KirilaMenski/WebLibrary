@@ -15,6 +15,8 @@ public interface NewsService {
 	
 	public List<News> getAllNews () throws SQLException;
 	
+	public List<News> getAllNews (int page) throws SQLException;
+	
 	public News getNewsById (long id) throws SQLException;
 
 }
